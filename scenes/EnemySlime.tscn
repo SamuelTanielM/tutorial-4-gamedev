@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3onqp1htqcm7"]
+
+[ext_resource type="Texture2D" uid="uid://bs750pawoppvb" path="res://assets/kenney_platformerpack/PNG/Enemies/slimeBlock.png" id="2_mwrkj"]
+[ext_resource type="PackedScene" uid="uid://dhh2fbw0ip00n" path="res://scenes/AreaTrigger.tscn" id="3_y8dwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk053"]
+
+[node name="EnemyFish" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.696429, -13.2321)
+scale = Vector2(0.696429, 0.696429)
+texture = ExtResource("2_mwrkj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.86929, 2.64643)
+shape = SubResource("RectangleShape2D_jk053")
+
+[node name="losearea" parent="." instance=ExtResource("3_y8dwi")]
+scale = Vector2(3.17732, -3.15208)
+sceneName = "LoseScreen"
