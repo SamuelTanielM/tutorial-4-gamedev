@@ -2,6 +2,8 @@ extends Node
 
 var last_scene = "Level1"  # Store the last scene name
 
+var lives = 3	
+
 func set_last_scene(scene_path: String):
 	last_scene = scene_path
 

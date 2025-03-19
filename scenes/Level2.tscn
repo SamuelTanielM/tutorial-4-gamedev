@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://do1b11irobigq"]
+[gd_scene load_steps=11 format=4 uid="uid://do1b11irobigq"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_vwxp3"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_aedqa"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/spawner.gd" id="6_rcfe5"]
 [ext_resource type="PackedScene" uid="uid://c3onqp1htqcm7" path="res://scenes/EnemySlime.tscn" id="7_qv2uh"]
 [ext_resource type="Script" path="res://scenes/MovingPlatform.gd" id="7_ui3k0"]
+[ext_resource type="PackedScene" uid="uid://dnbh14usv5d6a" path="res://scenes/LifeCounter.tscn" id="8_sqvqw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ren3"]
 texture = ExtResource("2_aedqa")
@@ -73,6 +74,7 @@ texture = ExtResource("3_8rais")
 [node name="areatrigger" parent="Sprite2D" instance=ExtResource("4_wru2d")]
 scale = Vector2(14.6372, 25.06)
 sceneName = "WinScreen"
+Lives = 100
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(2953, -2376)
@@ -82,7 +84,8 @@ obstacle = ExtResource("7_qv2uh")
 [node name="LoseArea" parent="." instance=ExtResource("4_wru2d")]
 position = Vector2(-5, 1191)
 scale = Vector2(473.093, -27.5184)
-sceneName = "LoseScreen"
+sceneName = "Level2"
+Lives = -1
 
 [node name="Spawner2" type="Node2D" parent="."]
 position = Vector2(-1348, -2834)
@@ -189,3 +192,7 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 use_default_word_separators = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("8_sqvqw")]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvndnf7rfvve0"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_7df1t"]
+[ext_resource type="Texture2D" uid="uid://chkr5tpe4pdc1" path="res://assets/sam/Frame 971.png" id="1_37jd2"]
+[ext_resource type="Texture2D" uid="uid://cyyjw40hvqe6w" path="res://assets/sam/Title.png" id="2_8wywk"]
+[ext_resource type="Texture2D" uid="uid://rwwh7hd5ow3f" path="res://assets/sam/Lines.png" id="2_lmdx8"]
+[ext_resource type="Texture2D" uid="uid://dfoo5ktggv63j" path="res://assets/sam/BPlay.png" id="3_5xyrb"]
+[ext_resource type="Texture2D" uid="uid://biilmmatanjk6" path="res://assets/sam/BLevel.png" id="4_d7h7h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7df1t")
+bplay_scene_to_load = "Level1"
+blevel_scene_to_load = "LevelSelect"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_37jd2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -222.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 17
+
+[node name="Title" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 210)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_8wywk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BPlay" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("3_5xyrb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BLevel" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("4_d7h7h")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2"]
+custom_minimum_size = Vector2(1000, 50)
+layout_mode = 2
+texture = ExtResource("2_lmdx8")
+expand_mode = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer3"]
+custom_minimum_size = Vector2(1000, 50)
+layout_mode = 2
+texture = ExtResource("2_lmdx8")
+expand_mode = 1
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/BPlay" to="." method="_on_b_play_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/BPlay" to="." method="_on_b_play_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BPlay" to="." method="_on_b_play_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/BLevel" to="." method="_on_b_level_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/BLevel" to="." method="_on_b_level_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/BLevel" to="." method="_on_b_level_pressed"]

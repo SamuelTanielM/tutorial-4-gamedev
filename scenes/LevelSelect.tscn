@@ -1,0 +1,207 @@
+[gd_scene load_steps=6 format=3 uid="uid://dplvinddruidw"]
+
+[ext_resource type="Script" path="res://scenes/level_select.gd" id="1_y2qoc"]
+[ext_resource type="Texture2D" uid="uid://chkr5tpe4pdc1" path="res://assets/sam/Frame 971.png" id="2_wh0ah"]
+[ext_resource type="Texture2D" uid="uid://jc6xdjtc7u7v" path="res://assets/sam/B.png" id="3_up8sj"]
+[ext_resource type="FontFile" uid="uid://xvj3scotuj4p" path="res://assets/sam/PressStart2P-Regular.ttf" id="4_12jn6"]
+[ext_resource type="Texture2D" uid="uid://rwwh7hd5ow3f" path="res://assets/sam/Lines.png" id="6_v4riw"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_y2qoc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wh0ah")
+expand_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2"]
+custom_minimum_size = Vector2(1000, 50)
+layout_mode = 2
+texture = ExtResource("6_v4riw")
+expand_mode = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer3"]
+custom_minimum_size = Vector2(1000, 50)
+layout_mode = 2
+texture = ExtResource("6_v4riw")
+expand_mode = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -222.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 100
+
+[node name="BBack" type="Button" parent="MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_12jn6")
+text = "
+"
+flat = true
+
+[node name="TextEdit" type="Label" parent="MarginContainer4/HBoxContainer/BBack"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.976471, 0.87451, 0.627451, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_12jn6")
+theme_override_font_sizes/font_size = 20
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -222.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 100
+
+[node name="B1" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_up8sj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextEdit" type="Label" parent="MarginContainer/HBoxContainer/B1"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.976471, 0.87451, 0.627451, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_12jn6")
+theme_override_font_sizes/font_size = 20
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="B2" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_up8sj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextEdit" type="Label" parent="MarginContainer/HBoxContainer/B2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.976471, 0.87451, 0.627451, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_12jn6")
+theme_override_font_sizes/font_size = 20
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="MarginContainer4/HBoxContainer/BBack" to="." method="_on_b_back_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer4/HBoxContainer/BBack" to="." method="_on_b_back_mouse_exited"]
+[connection signal="pressed" from="MarginContainer4/HBoxContainer/BBack" to="." method="_on_b_back_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/B1" to="." method="_on_b_1_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/B1" to="." method="_on_b_1_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/B1" to="." method="_on_b_1_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/B2" to="." method="_on_b_2_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/HBoxContainer/B2" to="." method="_on_b_2_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/B2" to="." method="_on_b_2_pressed"]

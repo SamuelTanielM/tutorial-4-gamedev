@@ -18,4 +18,5 @@ shape = SubResource("RectangleShape2D_jk053")
 
 [node name="losearea" parent="." instance=ExtResource("3_y8dwi")]
 scale = Vector2(3.17732, -3.15208)
-sceneName = "LoseScreen"
+sceneName = "CurrentScreen"
+Lives = -1

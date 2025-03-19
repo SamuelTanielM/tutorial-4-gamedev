@@ -17,4 +17,5 @@ shape = SubResource("CapsuleShape2D_uwti4")
 
 [node name="losearea" parent="." instance=ExtResource("3_irqk5")]
 scale = Vector2(4.24025, -5.61642)
-sceneName = "LoseScreen"
+sceneName = "CurrentScreen"
+Lives = -1
